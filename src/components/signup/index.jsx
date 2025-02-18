@@ -6,7 +6,7 @@ import jstz from "jstz"
 import React, { useState } from "react"
 import { useForm } from "react-hook-form"
 
-import getResourceSet from "../../utils/getResourceSet"
+//import getResourceSet from "../../utils/getResourceSet"
 //import InputCheckbox from "../../atoms/form/input-checkbox"
 import InputCheckbox from "../checkbox"
 //import InputRadio from "../../atoms/form/input-radio"
@@ -27,7 +27,7 @@ import companies from "../../data/companies"
 import countries from "../../data/countries"
 
 const Signup = () => {
-  const transl = getResourceSet(`Signup`)
+  //const transl = getResourceSet(`Signup`)
 
   const [selectedRadioOption, setSelectedRadioOption] = useState(null)
 
@@ -52,10 +52,12 @@ const Signup = () => {
   const getPhonePlaceholder = () => {
     const country = form.watch(`country`)
 
+    /*
     if (!country) return `${transl.phonePlaceholder?.value} +41...`
     return `${transl.phonePlaceholder?.value} +${
       countries.find(e => e[0] === country)[1]
     }…`
+    */
   }
 
   // Submit function
@@ -174,10 +176,11 @@ const Signup = () => {
           level={1}
           className="font-semibold text-[40px] md:text-[64px] leading-[40px] md:leading-[64px] tracking-tight"
         >
-          {transl.pageHeading?.value}
+          {/*{transl.pageHeading?.value}*/}
         </Heading>
 
-        <div className="mt-4 text-md">{transl.pageSubHeading?.value}</div>
+        {/*<div className="mt-4 text-md">{transl.pageSubHeading?.value}</div>*/}
+        <div className="mt-4 text-md">Sub Heading Value</div>
       </div>
       <form onSubmit={form.handleSubmit(submit)}>
         <div className="grid gap-2 sm:grid-cols-2 sm:gap-4">
@@ -187,24 +190,24 @@ const Signup = () => {
                 name="firstName"
                 validation={{ required: true }}
                 {...{ form }}
-                label={transl.firstNameLabel?.value}
-                placeholder={transl.firstNamePlaceholder?.value}
+                //label={transl.firstNameLabel?.value}
+                //placeholder={transl.firstNamePlaceholder?.value}
               />
 
               <InputText
                 name="lastName"
                 validation={{ required: true }}
                 {...{ form }}
-                label={transl.lastNameLabel?.value}
-                placeholder={transl.lastNamePlaceholder?.value}
+                //label={transl.lastNameLabel?.value}
+                //placeholder={transl.lastNamePlaceholder?.value}
               />
 
               <InputSelect
                 name="country"
                 validation={{ required: true }}
                 {...{ form }}
-                label={transl.countryLabel?.value}
-                placeholder={transl.countryPlaceholder?.value}
+                //label={transl.countryLabel?.value}
+                //placeholder={transl.countryPlaceholder?.value}
                 options={countries.map(country => ({
                   value: country[0],
                   label: country[0],
@@ -215,8 +218,8 @@ const Signup = () => {
                 name="phone"
                 validation={{ minLength: 7, maxLength: 20 }}
                 {...{ form }}
-                label={transl.phoneLabel?.value}
-                placeholder={getPhonePlaceholder()}
+                //label={transl.phoneLabel?.value}
+                //placeholder={getPhonePlaceholder()}
                 type="tel"
               />
 
@@ -225,18 +228,18 @@ const Signup = () => {
                   name="email"
                   validation={{ required: true }}
                   {...{ form }}
-                  label={transl.emailLabel?.value}
+                  //label={transl.emailLabel?.value}
                   type="email"
-                  placeholder={transl.emailPlaceholder?.value}
+                  //placeholder={transl.emailPlaceholder?.value}
                 />
                 {errors?.email?.type === `emailInUse` && (
                   <p
                     className="absolute bottom-0 text-xxs text-brightred"
-                    dangerouslySetInnerHTML={{
+                    /*dangerouslySetInnerHTML={{
                       __html:
                         transl.emailInUseErrorMessage?.markdown
                           ?.childMarkdownRemark?.html,
-                    }}
+                    }}*/
                     style={{ transform: `translateY(105%)` }}
                   />
                 )}
@@ -246,22 +249,23 @@ const Signup = () => {
                 name="password"
                 validation={{ required: true }}
                 {...{ form }}
-                label={transl.passwordLabel?.value}
+                //label={transl.passwordLabel?.value}
                 type="password"
-                placeholder={transl.passwordPlaceholder?.value}
+                //placeholder={transl.passwordPlaceholder?.value}
               />
             </>
           )}
         </div>
         {plan && (
           <>
-            <div className="mt-5 mb-2">{transl.agencyLabel?.value}*</div>
+            {/*<div className="mt-5 mb-2">{transl.agencyLabel?.value}*</div>*/}
+            <div className="mt-5 mb-2">TEST</div>
             <div>
               <div className="flex gap-4">
                 <InputRadio
                   className="mb-5"
                   name="agency_identification"
-                  label={transl.yesRadioLabel?.value}
+                  //label={transl.yesRadioLabel?.value}
                   value="Yes"
                   validation={{ required: true }}
                   {...{ form }}
@@ -270,7 +274,7 @@ const Signup = () => {
                 />
                 <InputRadio
                   name="agency_identification"
-                  label={transl.noRadioLabel?.value}
+                  //label={transl.noRadioLabel?.value}
                   value="No"
                   validation={{ required: true }}
                   {...{ form }}
@@ -285,8 +289,8 @@ const Signup = () => {
                     name="agency_size"
                     validation={{ required: true }}
                     {...{ form }}
-                    label={transl.agencyYesLabel?.value}
-                    placeholder={transl.agencySizePlaceholder?.value}
+                    //label={transl.agencyYesLabel?.value}
+                    //placeholder={transl.agencySizePlaceholder?.value}
                     options={agencies.map(agency => ({
                       value: agency[0],
                       label: agency[0],
@@ -298,8 +302,8 @@ const Signup = () => {
                     name="company_size"
                     validation={{ required: true }}
                     {...{ form }}
-                    label={transl.agencyNoLabel?.value}
-                    placeholder={transl.companySizePlaceholder?.value}
+                    //label={transl.agencyNoLabel?.value}
+                    //placeholder={transl.companySizePlaceholder?.value}
                     options={companies.map(company => ({
                       value: company[0],
                       label: company[0],
@@ -310,7 +314,7 @@ const Signup = () => {
 
               {errors?.agency_identification && (
                 <p className="mt-1 text-xs text-brightred">
-                  {transl.agencyErrorMessage?.value}
+                  {/*{transl.agencyErrorMessage?.value}*/}
                 </p>
               )}
             </div>
@@ -326,14 +330,14 @@ const Signup = () => {
               </div>
               <div
                 className="ml-5"
-                dangerouslySetInnerHTML={{
+                /*dangerouslySetInnerHTML={{
                   __html: transl?.terms?.markdown?.childMarkdownRemark?.html,
-                }}
+                }}*/
               />
 
               {errors?.terms && (
                 <p className="mt-1 text-xs text-brightred">
-                  {transl.termsErrorMessage?.value}
+                  {/*{transl.termsErrorMessage?.value}*/}
                 </p>
               )}
             </div>
@@ -347,13 +351,16 @@ const Signup = () => {
             >
               {sending ? (
                 <>
-                  {transl.SubmitButtonTextSubmitting?.value}
+                  {/*{transl.SubmitButtonTextSubmitting?.value}*/}
                   <span>.</span>
                   <span>.</span>
                   <span>.</span>
                 </>
               ) : (
-                <>{transl.SubmitButtonText?.value}</>
+                <>
+                    {/*<>{transl.SubmitButtonText?.value}</>*/}
+                    Submit
+                </>
               )}
             </Button>
           </>
