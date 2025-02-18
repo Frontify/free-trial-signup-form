@@ -5,8 +5,10 @@ import React, { useState } from "react"
 import Modal from "react-modal"
 import { useSelector } from "react-redux"
 
-import CompanionAppLink from "../atoms/companion-app-link"
-import ModalDemoRequest from "../molecules/modal-demo-request"
+//import CompanionAppLink from "../atoms/companion-app-link"
+import CompanionAppLink from "../companion-app-link"
+//import ModalDemoRequest from "../molecules/modal-demo-request"
+import ModalDemoRequest from "../modal-demo-request"
 
 const Link = ({
   to,
