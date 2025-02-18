@@ -1,0 +1,54 @@
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  position: relative;
+  padding-left: 1rem;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  transform: scale(1.8);  /* Increase the size by 180% */
+  margin: 10px;
+  accent-color: #2d3232; /* Set the color of the input when selected/clicked */
+  cursor: pointer;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-overflow: "";
+  border: none;
+  border-radius: 0;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-bottom: 1px solid #2d3232;
+  border-right: 1px solid #2d3232;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 0;
+  bottom: 45%;
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.state--editing.select-wrapper::after {
+  opacity: 1;
+}
+
+input::placeholder {
+  opacity: 1;
+}
+
+input[type="text"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
