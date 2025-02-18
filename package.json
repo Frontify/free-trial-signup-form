@@ -1,7 +1,7 @@
 {
   "name": "free-trial-signup-form",
   "version": "1.0.0",
-  "description": "",
+  "description": "The Free Trial Signup form carried over from the legacy website for use in Webflow.",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
@@ -29,9 +29,7 @@
     "type": "git",
     "url": "git+https://github.com/Frontify/free-trial-signup-form.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Frontify",
   "bugs": {
     "url": "https://github.com/Frontify/free-trial-signup-form/issues"
   },
