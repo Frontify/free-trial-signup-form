@@ -2,7 +2,7 @@ import classNames from "classnames"
 import PropTypes from "prop-types"
 import React from "react"
 
-import Link from "../link"
+//import Link from "../link"
 
 const Button = ({
   type = `button`,
@@ -66,7 +66,7 @@ const Button = ({
   )
 
   const renderAsLink = () => (
-    <Link
+    <a
       {...{ to }}
       role="button"
       className={classNames(
@@ -79,7 +79,7 @@ const Button = ({
       {...others}
     >
       {children}
-    </Link>
+    </a>
   )
 
   return isLink ? renderAsLink() : renderAsButton()
