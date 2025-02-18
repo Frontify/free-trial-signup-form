@@ -1,4 +1,5 @@
-import "./form.css"
+//import "./form.css"
+import "../../styles/form.css"
 
 import classnames from "classnames"
 import { motion } from "framer-motion"
