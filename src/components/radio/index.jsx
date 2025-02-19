@@ -32,13 +32,14 @@ const InputRadio = props => {
   }
 
   return (
-    <motion.div
-      className={classnames(`block`, className)}
-      transition={transition}
-      animate={{
-        height: !isChecked && readOnly ? 0 : `auto`,
-      }}
-    >
+    //<motion.div
+      //className={classnames(`block`, className)}
+      //transition={transition}
+      //animate={{
+        //height: !isChecked && readOnly ? 0 : `auto`,
+      //}}
+    //>
+    <div class="radio-buttons-group">
       <input
         id={htmlId}
         type="radio"
@@ -61,7 +62,7 @@ const InputRadio = props => {
       >
         {label}
       </label>
-    </motion.div>
+    </div>
   )
 }
 

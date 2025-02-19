@@ -182,108 +182,101 @@ const Signup = () => {
         {/*<div className="mt-4 text-md">{transl.pageSubHeading?.value}</div>*/}
       </div>
       <form onSubmit={form.handleSubmit(submit)}>
-        <div className="grid gap-2 sm:grid-cols-2 sm:gap-4">
+        {/*<div className="grid gap-2 sm:grid-cols-2 sm:gap-4">*/}
+        <div>
           {plan && (
             <>
-              <InputText
-                name="firstName"
-                validation={{ required: true }}
-                {...{ form }}
-                label="First Name"
-                placeholder="e.g., Jamie"
-                //label={transl.firstNameLabel?.value}
-                //placeholder={transl.firstNamePlaceholder?.value}
-              />
-
-              <InputText
-                name="lastName"
-                validation={{ required: true }}
-                {...{ form }}
-                label="Last Name"
-                placeholder="e.g., Doe"
-                //label={transl.lastNameLabel?.value}
-                //placeholder={transl.lastNamePlaceholder?.value}
-              />
-
-              <InputSelect
-                name="country"
-                validation={{ required: true }}
-                {...{ form }}
-                label="Country"
-                placeholder="e.g., Switzerland"
-                //label={transl.countryLabel?.value}
-                //placeholder={transl.countryPlaceholder?.value}
-                options={countries.map(country => ({
-                  value: country[0],
-                  label: country[0],
-                }))}
-              />
-
-              <InputText
-                name="phone"
-                validation={{ minLength: 7, maxLength: 20 }}
-                {...{ form }}
-                label="Phone Number"
-                placeholder="e.g., +41..."
-                //label={transl.phoneLabel?.value}
-                //placeholder={getPhonePlaceholder()}
-                type="tel"
-              />
-
-              <div className="relative">
-                <InputText
-                  name="email"
-                  validation={{ required: true }}
-                  {...{ form }}
-                  //label={transl.emailLabel?.value}
-                  type="email"
-                  label="Work Email"
-                  placeholder="e.g., hello@frontify.com"
-                  //placeholder={transl.emailPlaceholder?.value}
-                />
-                {errors?.email?.type === `emailInUse` && (
-                  <p
-                    className="absolute bottom-0 text-xxs text-brightred"
-                    /*dangerouslySetInnerHTML={{
-                      __html:
-                        transl.emailInUseErrorMessage?.markdown
-                          ?.childMarkdownRemark?.html,
-                    }}*/
-                    style={{ transform: `translateY(105%)` }}
+              <div className="grid-cols">
+                <div>
+                  <InputText
+                    name="firstName"
+                    validation={{ required: true }}
+                    {...{ form }}
+                    label="First Name"
+                    placeholder="e.g., Jamie"
+                    //label={transl.firstNameLabel?.value}
+                    //placeholder={transl.firstNamePlaceholder?.value}
                   />
-                )}
+                  <InputSelect
+                    name="country"
+                    validation={{ required: true }}
+                    {...{ form }}
+                    label="Country"
+                    placeholder="e.g., Switzerland"
+                    //label={transl.countryLabel?.value}
+                    //placeholder={transl.countryPlaceholder?.value}
+                    options={countries.map(country => ({
+                      value: country[0],
+                      label: country[0],
+                    }))}
+                  />
+                  <InputText
+                    name="email"
+                    validation={{ required: true }}
+                    {...{ form }}
+                    //label={transl.emailLabel?.value}
+                    type="email"
+                    label="Work Email"
+                    placeholder="e.g., hello@frontify.com"
+                    //placeholder={transl.emailPlaceholder?.value}
+                  />
+                  {errors?.email?.type === `emailInUse` && (
+                    <p
+                      className="absolute bottom-0 text-xxs text-brightred"
+                      /*dangerouslySetInnerHTML={{
+                        __html:
+                          transl.emailInUseErrorMessage?.markdown
+                            ?.childMarkdownRemark?.html,
+                      }}*/
+                      style={{ transform: `translateY(105%)` }}
+                    />
+                  )}
+                </div>
+                <div>
+                  <InputText
+                    name="lastName"
+                    validation={{ required: true }}
+                    {...{ form }}
+                    label="Last Name"
+                    placeholder="e.g., Doe"
+                    //label={transl.lastNameLabel?.value}
+                    //placeholder={transl.lastNamePlaceholder?.value}
+                  />          
+                  <InputText
+                    name="phone"
+                    validation={{ minLength: 7, maxLength: 20 }}
+                    {...{ form }}
+                    label="Phone Number"
+                    placeholder="e.g., +41..."
+                    //label={transl.phoneLabel?.value}
+                    //placeholder={getPhonePlaceholder()}
+                    type="tel"
+                  />
+                  <InputText
+                    name="password"
+                    validation={{ required: true }}
+                    {...{ form }}
+                    //label={transl.passwordLabel?.value}
+                    type="password"
+                    label="Password"
+                    placeholder="e.g., correct horse battery staple"
+                    //placeholder={transl.passwordPlaceholder?.value}
+                  />
+                </div>
               </div>
-
-              <InputText
-                name="password"
-                validation={{ required: true }}
-                {...{ form }}
-                //label={transl.passwordLabel?.value}
-                type="password"
-                label="Password"
-                placeholder="e.g., correct horse battery staple"
-                //placeholder={transl.passwordPlaceholder?.value}
-              />
-            </>
-          )}
-        </div>
-        {plan && (
-          <>
-            {/*<div className="mt-5 mb-2">{transl.agencyLabel?.value}*</div>*/}
-            <div className="mt-5 mb-2">Are you with an Agency? (branding, design, advertising, consulting, tech)*</div>
-            <div>
-              <div className="flex gap-4">
+              <div className="mt-5 mb-2">Are you with an Agency? (branding, design, advertising, consulting, tech)*</div>
+              <div className="radio-buttons">
                 <InputRadio
-                  className="mb-5"
-                  name="agency_identification"
-                  //label={transl.yesRadioLabel?.value}
-                  label="Yes"
-                  value="Yes"
-                  validation={{ required: true }}
-                  {...{ form }}
-                  checked={selectedRadioOption === `Yes`}
-                  onChange={() => handleOptionChange(`Yes`)}
-                />
+                    className="mb-5"
+                    name="agency_identification"
+                    //label={transl.yesRadioLabel?.value}
+                    label="Yes"
+                    value="Yes"
+                    validation={{ required: true }}
+                    {...{ form }}
+                    checked={selectedRadioOption === `Yes`}
+                    onChange={() => handleOptionChange(`Yes`)}
+                  />
                 <InputRadio
                   name="agency_identification"
                   //label={transl.noRadioLabel?.value}
@@ -294,6 +287,37 @@ const Signup = () => {
                   checked={selectedRadioOption === `No`}
                   onChange={() => handleOptionChange(`No`)}
                 />
+              </div>
+            </>
+          )}
+        </div>
+        {plan && (
+          <>
+            {/*<div className="mt-5 mb-2">{transl.agencyLabel?.value}*</div>*/}
+            {/*<div className="mt-5 mb-2">Are you with an Agency? (branding, design, advertising, consulting, tech)*</div>*/}
+            <div>
+              {/*<div className="flex gap-4">*/}
+                {/*<InputRadio
+                  className="mb-5"
+                  name="agency_identification"
+                  //label={transl.yesRadioLabel?.value}
+                  label="Yes"
+                  value="Yes"
+                  validation={{ required: true }}
+                  {...{ form }}
+                  checked={selectedRadioOption === `Yes`}
+                  onChange={() => handleOptionChange(`Yes`)}
+                />*/}
+                {/*<InputRadio
+                  name="agency_identification"
+                  //label={transl.noRadioLabel?.value}
+                  label="No"
+                  value="No"
+                  validation={{ required: true }}
+                  {...{ form }}
+                  checked={selectedRadioOption === `No`}
+                  onChange={() => handleOptionChange(`No`)}
+                />*/}
               </div>
 
               <div className="grid gap-2 sm:grid-cols-2 sm:gap-4">
@@ -334,7 +358,6 @@ const Signup = () => {
                   {/*{transl.agencyErrorMessage?.value}*/}
                 </p>
               )}
-            </div>
             <div className="relative pb-3 my-5">
               <div className="absolute">
                 <InputCheckbox

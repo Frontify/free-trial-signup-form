@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+label {
+    display: inline-block;
+    width: 100%;
+}
+
+input:not([type="radio"]),
+select {
+    width: 100%;
+}
+
+input[type="radio"] + label {
+    padding-left: 0 !important;
+}
+
+.grid-cols {
+    display: grid;
+    /* Create a two column grid of equal columns */
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.radio-buttons-group,
+.radio-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.radio-buttons {
+    gap: 2rem;
+    position: relative;
+    right: 4px;
+}
