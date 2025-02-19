@@ -1,3 +1,5 @@
+import "./styles/main.css"
+
 import Signup from "./components/signup"
 
 const App = () => {
