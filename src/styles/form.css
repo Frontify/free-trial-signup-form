@@ -1,3 +1,7 @@
+:root {
+  --charcoal: ##2d3232;
+}
+
 input[type="checkbox"] + label,
 input[type="radio"] + label {
   position: relative;
@@ -8,7 +12,7 @@ input[type="checkbox"],
 input[type="radio"] {
   transform: scale(1.8);  /* Increase the size by 180% */
   margin: 10px;
-  accent-color: #2d3232; /* Set the color of the input when selected/clicked */
+  accent-color: var(--charcoal); /* Set the color of the input when selected/clicked */
   cursor: pointer;
 }
 
@@ -30,8 +34,8 @@ select {
   display: block;
   width: 10px;
   height: 10px;
-  border-bottom: 1px solid #2d3232;
-  border-right: 1px solid #2d3232;
+  border-bottom: 1px var(--charcoal);
+  border-right: 1px var(--charcoal);
   transform: rotate(45deg);
   position: absolute;
   right: 0;

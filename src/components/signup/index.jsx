@@ -180,7 +180,6 @@ const Signup = () => {
         </Heading>
 
         {/*<div className="mt-4 text-md">{transl.pageSubHeading?.value}</div>*/}
-        <div className="mt-4 text-md">Sub Heading Value</div>
       </div>
       <form onSubmit={form.handleSubmit(submit)}>
         <div className="grid gap-2 sm:grid-cols-2 sm:gap-4">
@@ -190,6 +189,8 @@ const Signup = () => {
                 name="firstName"
                 validation={{ required: true }}
                 {...{ form }}
+                label="First Name"
+                placeholder="e.g., Jamie"
                 //label={transl.firstNameLabel?.value}
                 //placeholder={transl.firstNamePlaceholder?.value}
               />
@@ -198,6 +199,8 @@ const Signup = () => {
                 name="lastName"
                 validation={{ required: true }}
                 {...{ form }}
+                label="Last Name"
+                placeholder="e.g., Doe"
                 //label={transl.lastNameLabel?.value}
                 //placeholder={transl.lastNamePlaceholder?.value}
               />
@@ -206,6 +209,8 @@ const Signup = () => {
                 name="country"
                 validation={{ required: true }}
                 {...{ form }}
+                label="Country"
+                placeholder="e.g., Switzerland"
                 //label={transl.countryLabel?.value}
                 //placeholder={transl.countryPlaceholder?.value}
                 options={countries.map(country => ({
@@ -218,6 +223,8 @@ const Signup = () => {
                 name="phone"
                 validation={{ minLength: 7, maxLength: 20 }}
                 {...{ form }}
+                label="Phone Number"
+                placeholder="e.g., +41..."
                 //label={transl.phoneLabel?.value}
                 //placeholder={getPhonePlaceholder()}
                 type="tel"
@@ -230,6 +237,8 @@ const Signup = () => {
                   {...{ form }}
                   //label={transl.emailLabel?.value}
                   type="email"
+                  label="Work Email"
+                  placeholder="e.g., hello@frontify.com"
                   //placeholder={transl.emailPlaceholder?.value}
                 />
                 {errors?.email?.type === `emailInUse` && (
@@ -251,6 +260,8 @@ const Signup = () => {
                 {...{ form }}
                 //label={transl.passwordLabel?.value}
                 type="password"
+                label="Password"
+                placeholder="e.g., correct horse battery staple"
                 //placeholder={transl.passwordPlaceholder?.value}
               />
             </>
@@ -259,13 +270,14 @@ const Signup = () => {
         {plan && (
           <>
             {/*<div className="mt-5 mb-2">{transl.agencyLabel?.value}*</div>*/}
-            <div className="mt-5 mb-2">TEST</div>
+            <div className="mt-5 mb-2">Are you with an Agency? (branding, design, advertising, consulting, tech)*</div>
             <div>
               <div className="flex gap-4">
                 <InputRadio
                   className="mb-5"
                   name="agency_identification"
                   //label={transl.yesRadioLabel?.value}
+                  label="Yes"
                   value="Yes"
                   validation={{ required: true }}
                   {...{ form }}
@@ -275,6 +287,7 @@ const Signup = () => {
                 <InputRadio
                   name="agency_identification"
                   //label={transl.noRadioLabel?.value}
+                  label="No"
                   value="No"
                   validation={{ required: true }}
                   {...{ form }}
@@ -289,6 +302,8 @@ const Signup = () => {
                     name="agency_size"
                     validation={{ required: true }}
                     {...{ form }}
+                    label="How big is your agency?"
+                    placeholder="e.g., 1-10"
                     //label={transl.agencyYesLabel?.value}
                     //placeholder={transl.agencySizePlaceholder?.value}
                     options={agencies.map(agency => ({
@@ -302,6 +317,8 @@ const Signup = () => {
                     name="company_size"
                     validation={{ required: true }}
                     {...{ form }}
+                    label="How big is your company?"
+                    placeholder="e.g., 1-20"
                     //label={transl.agencyNoLabel?.value}
                     //placeholder={transl.companySizePlaceholder?.value}
                     options={companies.map(company => ({
@@ -333,7 +350,7 @@ const Signup = () => {
                 /*dangerouslySetInnerHTML={{
                   __html: transl?.terms?.markdown?.childMarkdownRemark?.html,
                 }}*/
-              />
+              >I have read and agree to Frontify's Terms of Service, General Terms and Conditions and Privacy Policy.</div>
 
               {errors?.terms && (
                 <p className="mt-1 text-xs text-brightred">
@@ -344,7 +361,7 @@ const Signup = () => {
             <Button
               type="submit"
               className={classNames(
-                `block md:inline-block text-center bg-charcoal hover:bg-superdark shadow-button rounded-lg text-white text-xs lg:text-sm px-5 py-2 transition duration-500`,
+                `block md:inline-block text-center text-white bg-charcoal hover:bg-superdark shadow-button rounded-lg text-white text-xs lg:text-sm px-5 py-2 transition duration-500`,
                 sending && `sending`
               )}
               disabled={sending}
@@ -359,7 +376,7 @@ const Signup = () => {
               ) : (
                 <>
                     {/*<>{transl.SubmitButtonText?.value}</>*/}
-                    Submit
+                    Sign Up
                 </>
               )}
             </Button>
