@@ -1,19 +1,45 @@
 :root {
-  --charcoal: ##2d3232;
+  --charcoal: #2d3232;
+}
+
+label {
+  display: inline-block;
+  width: 100%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+select {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 input[type="checkbox"] + label,
 input[type="radio"] + label {
   position: relative;
-  padding-left: 1rem;
+  padding-left: 0;
 }
 
 input[type="checkbox"],
 input[type="radio"] {
-  transform: scale(1.8);  /* Increase the size by 180% */
-  margin: 10px;
-  accent-color: var(--charcoal); /* Set the color of the input when selected/clicked */
+  /* Increase the size by 180% */
+  transform: scale(1.8);
+  margin: 1rem;
+  /* Set the color of the input when selected/clicked */
+  accent-color: var(--charcoal); 
   cursor: pointer;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  right: 2px;
+}
+
+input::placeholder {
+  opacity: 1;
 }
 
 select {
@@ -23,6 +49,7 @@ select {
   text-overflow: "";
   border: none;
   border-radius: 0;
+  cursor: pointer;
 }
 
 .select-wrapper {
@@ -48,11 +75,15 @@ select {
   opacity: 1;
 }
 
-input::placeholder {
-  opacity: 1;
+.radio-buttons-group,
+.radio-buttons,
+.checkbox {
+    display: flex;
+    align-items: center;
 }
 
-input[type="text"] {
-  -webkit-appearance: none;
-  appearance: none;
+.radio-buttons {
+  gap: 2rem;
+  position: relative;
+  right: 2px;
 }

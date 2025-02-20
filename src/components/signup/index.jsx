@@ -171,18 +171,7 @@ const Signup = () => {
 
   return (
     <div className="mt-12">
-      <div className="pb-5 text-center">
-        <Heading
-          level={1}
-          className="font-semibold text-[40px] md:text-[64px] leading-[40px] md:leading-[64px] tracking-tight"
-        >
-          {/*{transl.pageHeading?.value}*/}
-        </Heading>
-
-        {/*<div className="mt-4 text-md">{transl.pageSubHeading?.value}</div>*/}
-      </div>
       <form onSubmit={form.handleSubmit(submit)}>
-        {/*<div className="grid gap-2 sm:grid-cols-2 sm:gap-4">*/}
         <div>
           {plan && (
             <>
@@ -194,8 +183,6 @@ const Signup = () => {
                     {...{ form }}
                     label="First Name"
                     placeholder="e.g., Jamie"
-                    //label={transl.firstNameLabel?.value}
-                    //placeholder={transl.firstNamePlaceholder?.value}
                   />
                   <InputSelect
                     name="country"
@@ -203,8 +190,6 @@ const Signup = () => {
                     {...{ form }}
                     label="Country"
                     placeholder="e.g., Switzerland"
-                    //label={transl.countryLabel?.value}
-                    //placeholder={transl.countryPlaceholder?.value}
                     options={countries.map(country => ({
                       value: country[0],
                       label: country[0],
@@ -214,11 +199,9 @@ const Signup = () => {
                     name="email"
                     validation={{ required: true }}
                     {...{ form }}
-                    //label={transl.emailLabel?.value}
                     type="email"
                     label="Work Email"
                     placeholder="e.g., hello@frontify.com"
-                    //placeholder={transl.emailPlaceholder?.value}
                   />
                   {errors?.email?.type === `emailInUse` && (
                     <p
@@ -239,8 +222,6 @@ const Signup = () => {
                     {...{ form }}
                     label="Last Name"
                     placeholder="e.g., Doe"
-                    //label={transl.lastNameLabel?.value}
-                    //placeholder={transl.lastNamePlaceholder?.value}
                   />          
                   <InputText
                     name="phone"
@@ -248,19 +229,15 @@ const Signup = () => {
                     {...{ form }}
                     label="Phone Number"
                     placeholder="e.g., +41..."
-                    //label={transl.phoneLabel?.value}
-                    //placeholder={getPhonePlaceholder()}
                     type="tel"
                   />
                   <InputText
                     name="password"
                     validation={{ required: true }}
                     {...{ form }}
-                    //label={transl.passwordLabel?.value}
                     type="password"
                     label="Password"
                     placeholder="e.g., correct horse battery staple"
-                    //placeholder={transl.passwordPlaceholder?.value}
                   />
                 </div>
               </div>
@@ -269,7 +246,6 @@ const Signup = () => {
                 <InputRadio
                     className="mb-5"
                     name="agency_identification"
-                    //label={transl.yesRadioLabel?.value}
                     label="Yes"
                     value="Yes"
                     validation={{ required: true }}
@@ -279,7 +255,6 @@ const Signup = () => {
                   />
                 <InputRadio
                   name="agency_identification"
-                  //label={transl.noRadioLabel?.value}
                   label="No"
                   value="No"
                   validation={{ required: true }}
@@ -288,48 +263,6 @@ const Signup = () => {
                   onChange={() => handleOptionChange(`No`)}
                 />
               </div>
-              <div>
-                <InputCheckbox
-                  checkRequired
-                  name="terms"
-                  value="terms"
-                  label="I have read and agree to Frontify's Terms of Service, General Terms and Conditions and Privacy Policy."
-                  validation={{ required: true }}
-                  {...{ form }}
-                />
-              </div>
-            </>
-          )}
-        </div>
-        {plan && (
-          <>
-            {/*<div className="mt-5 mb-2">{transl.agencyLabel?.value}*</div>*/}
-            {/*<div className="mt-5 mb-2">Are you with an Agency? (branding, design, advertising, consulting, tech)*</div>*/}
-            <div>
-              {/*<div className="flex gap-4">*/}
-                {/*<InputRadio
-                  className="mb-5"
-                  name="agency_identification"
-                  //label={transl.yesRadioLabel?.value}
-                  label="Yes"
-                  value="Yes"
-                  validation={{ required: true }}
-                  {...{ form }}
-                  checked={selectedRadioOption === `Yes`}
-                  onChange={() => handleOptionChange(`Yes`)}
-                />*/}
-                {/*<InputRadio
-                  name="agency_identification"
-                  //label={transl.noRadioLabel?.value}
-                  label="No"
-                  value="No"
-                  validation={{ required: true }}
-                  {...{ form }}
-                  checked={selectedRadioOption === `No`}
-                  onChange={() => handleOptionChange(`No`)}
-                />*/}
-              </div>
-
               <div className="grid gap-2 sm:grid-cols-2 sm:gap-4">
                 {selectedRadioOption === `Yes` && (
                   <InputSelect
@@ -338,8 +271,6 @@ const Signup = () => {
                     {...{ form }}
                     label="How big is your agency?"
                     placeholder="e.g., 1-10"
-                    //label={transl.agencyYesLabel?.value}
-                    //placeholder={transl.agencySizePlaceholder?.value}
                     options={agencies.map(agency => ({
                       value: agency[0],
                       label: agency[0],
@@ -353,8 +284,6 @@ const Signup = () => {
                     {...{ form }}
                     label="How big is your company?"
                     placeholder="e.g., 1-20"
-                    //label={transl.agencyNoLabel?.value}
-                    //placeholder={transl.companySizePlaceholder?.value}
                     options={companies.map(company => ({
                       value: company[0],
                       label: company[0],
@@ -362,59 +291,51 @@ const Signup = () => {
                   />
                 )}
               </div>
-
               {errors?.agency_identification && (
                 <p className="mt-1 text-xs text-brightred">
                   {/*{transl.agencyErrorMessage?.value}*/}
                 </p>
               )}
-            <div className="relative pb-3 my-5">
-              <div className="absolute">
-                {/*<InputCheckbox
+              <div>
+                <InputCheckbox
                   checkRequired
                   name="terms"
                   value="terms"
+                  label="I have read and agree to Frontify's Terms of Service, General Terms and Conditions and Privacy Policy."
                   validation={{ required: true }}
                   {...{ form }}
-                />*/}
+                />
+                {errors?.terms && (
+                  <p className="mt-1 text-xs text-brightred">
+                    {/*{transl.termsErrorMessage?.value}*/}
+                  </p>
+                )}
               </div>
-              <div
-                className="ml-5"
-                /*dangerouslySetInnerHTML={{
-                  __html: transl?.terms?.markdown?.childMarkdownRemark?.html,
-                }}*/
-              >{/*I have read and agree to Frontify's Terms of Service, General Terms and Conditions and Privacy Policy.*/}</div>
-
-              {errors?.terms && (
-                <p className="mt-1 text-xs text-brightred">
-                  {/*{transl.termsErrorMessage?.value}*/}
-                </p>
-              )}
-            </div>
-            <Button
-              type="submit"
-              className={classNames(
-                `block md:inline-block text-center text-white bg-charcoal hover:bg-superdark shadow-button rounded-lg text-white text-xs lg:text-sm px-5 py-2 transition duration-500`,
-                sending && `sending`
-              )}
-              disabled={sending}
-            >
-              {sending ? (
-                <>
-                  {/*{transl.SubmitButtonTextSubmitting?.value}*/}
-                  <span>.</span>
-                  <span>.</span>
-                  <span>.</span>
-                </>
-              ) : (
-                <>
-                    {/*<>{transl.SubmitButtonText?.value}</>*/}
-                    Sign Up
-                </>
-              )}
-            </Button>
-          </>
-        )}
+              <Button
+                type="submit"
+                className={classNames(
+                  `block md:inline-block text-center bg-charcoal hover:bg-superdark shadow-button rounded-lg text-white text-xs lg:text-sm px-5 py-2 transition duration-500`,
+                  sending && `sending`
+                )}
+                disabled={sending}
+              >
+                {sending ? (
+                  <>
+                    {/*{transl.SubmitButtonTextSubmitting?.value}*/}
+                    <span>.</span>
+                    <span>.</span>
+                    <span>.</span>
+                  </>
+                ) : (
+                  <>
+                      {/*<>{transl.SubmitButtonText?.value}</>*/}
+                      Sign Up
+                  </>
+                )}
+              </Button>
+            </>
+          )}
+        </div>
       </form>
     </div>
   )
