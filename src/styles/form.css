@@ -1,0 +1,87 @@
+:root {
+    --charcoal: #232121;
+    --white: #fff;
+    --very-light-grey: #f9f9f9; 
+    --light-grey: #5b5656;
+    --mid-grey: #b0a7a7;
+    --maroon:  #a03c3c;
+
+    --radio-checkbox-select-color: var(--charcoal);
+    --border-color: var(--charcoal);
+}
+
+/* Set disabled styling for all elements */
+*:disabled {
+	opacity: 0.4;	/* 40% opacity */
+}
+
+.ft-input,
+.ft-select {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid var(--border-color);
+    font-family: inherit;
+}
+
+.ft-input:hover,
+.ft-input:focus,
+.ft-select:hover,
+.ft-select:focus {
+    border-bottom: 2px solid var(--border-color);
+}
+
+.ft-select {
+    cursor: pointer;
+}
+
+.ft-input {
+    /* Helps to align the input fields with the select */
+    max-width: 720px;
+}
+
+.ft-input::placeholder,
+.ft-select::placeholder {
+    font-family: inherit;
+    color: var(--mid-grey);
+}
+
+.ft-radio-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.ft-checkbox,
+.ft-radio {
+    /* The size of the radio and checkbox */
+    transform: scale(1.5);
+    margin: 0.8rem;
+    /* Selection color */
+    accent-color: var(--radio-checkbox-select-color);
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.ft-button {
+    display: inline-block;
+	background-color: var(--charcoal);
+    color: var(--white);
+    border: 1px solid var(--charcoal);
+    border-radius: 2rem;	/* 32px */
+    cursor: pointer;
+    padding: 0.75rem 1rem;	/* 12px 16px */
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
+    font-family: inherit;
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    outline: none;
+}
+
+.ft-button:hover,
+.ft-button:focus {
+    background-color: var(--light-grey);
+    border: 1px solid var(--light-grey);
+    outline: none;
+}

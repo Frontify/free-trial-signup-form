@@ -34,6 +34,7 @@ const InputRadio = props => {
   return (
     <div class="radio-buttons-group">
       <input
+        className="ft-radio"
         id={htmlId}
         type="radio"
         value={value || label}
@@ -46,6 +47,7 @@ const InputRadio = props => {
         tabIndex={tabIndex}
       />
       <label
+        className="ft-label"
         htmlFor={htmlId}
       >
         {label}

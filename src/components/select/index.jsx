@@ -34,7 +34,10 @@ const InputSelect = props => {
 
   return (
     <div className={className}>
-      <label className="text-xs" htmlFor={`htmlId`}>
+      <label 
+        className="ft-label" 
+        htmlFor={`htmlId`}
+      >
         {label}
         {validation && validation.required && `*`}
       </label>
@@ -44,19 +47,9 @@ const InputSelect = props => {
           editModeClass,
           !changed && `text-charcoal`
         )}
-        style={{
-          borderBottom: readOnly ? `1px solid transparent` : `1px solid black`,
-        }}
       >
         <select
-          className={classnames(
-            `bg-transparent transition duration-200 ease-in-out w-full`,
-            textColor
-          )}
-          style={{
-            backgroundColor: `transparent`,
-            pointerEvents: readOnly ? `none` : `auto`,
-          }}
+          className="ft-select"
           name={name}
           id={`htmlId`}
           readOnly={readOnly}

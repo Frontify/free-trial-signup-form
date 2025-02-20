@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;*/
 
+#ga-free_trial {
+    font-family: inherit;
+}
+
 .grid-cols {
     display: grid;
     /* Create a two column grid of equal columns */

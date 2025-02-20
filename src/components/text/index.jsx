@@ -30,7 +30,10 @@ const InputText = props => {
   return (
     <div>
       {label && (
-        <label className="text-xs" htmlFor={htmlId}>
+        <label 
+          className="ft-label" 
+          htmlFor={htmlId}
+        >
           {label}
           {validation && validation.required && `*`}
         </label>
@@ -38,21 +41,11 @@ const InputText = props => {
       <input
         id={htmlId}
         type={type ? type : `text`}
-        className={classnames(
-          `bg-transparent transition duration-200 ease-in-out text-sm sm:text-md w-full py-1 focus:outline-none `,
-          readOnly && `pointer-events-none`,
-          className,
-          textColor,
-          !inputValue && `text-charcoal`
-        )}
+        className="ft-input"
         onChange={() => {
           clearErrors(name)
         }}
         placeholder={placeholder}
-        style={{
-          backgroundColor: `transparent`,
-          borderBottom: readOnly ? `1px solid transparent` : `1px solid black`,
-        }}
         readOnly={readOnly}
         {...register(name, validation)}
         tabIndex={readOnly ? -1 : 0}

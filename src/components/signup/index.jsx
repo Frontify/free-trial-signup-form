@@ -242,7 +242,7 @@ const Signup = () => {
                 </div>
               </div>
               <div>Are you with an Agency? (branding, design, advertising, consulting, tech)*</div>
-              <div className="radio-buttons">
+              <div className="ft-radio-buttons">
                 <InputRadio
                     className="mb-5"
                     name="agency_identification"

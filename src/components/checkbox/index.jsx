@@ -49,18 +49,16 @@ const InputCheckbox = props => {
   return (
     <div class="checkbox">
       <input
+        className="ft-checkbox"
         id={`checkbox-${htmlId}`}
         type="checkbox"
-        className={classnames(
-          `bg-transparent transition duration-200 ease-in-out `,
-          className
-        )}
         value={value}
         name={name}
         readOnly={readOnly}
         {...register(name, validationObj)}
       />
       <label
+        className="ft-label"
         htmlFor={`checkbox-${htmlId}`}
       >
         {label}

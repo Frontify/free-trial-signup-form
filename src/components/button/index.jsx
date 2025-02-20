@@ -54,11 +54,7 @@ const Button = ({
   const renderAsButton = () => (
     <button
       {...{ type, onClick }}
-      className={classNames(
-        buttonClassNames,
-        GTMUngated ? `gtm-ungated` : null,
-        classname
-      )}
+      className="ft-button"
       {...others}
     >
       {children}
@@ -69,11 +65,7 @@ const Button = ({
     <a
       {...{ to }}
       role="button"
-      className={classNames(
-        buttonClassNames,
-        GTMUngated ? `gtm-ungated` : null,
-        classname
-      )}
+      className="ft-button"
       target={openAsTab ? `blank` : undefined}
       hasPathFactoryOverlay={hasPathFactoryOverlay}
       {...others}
