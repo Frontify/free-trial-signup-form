@@ -6,6 +6,12 @@
     --mid-grey: #b0a7a7;
     --maroon:  #a03c3c;
 
+    --font-family: inherit;
+    --font-size: 0.875rem; /* 14px */
+    --font-weight: 400;
+    --letter-spacing: 0.01rem; /* 1% */ 
+    --line-height: 1.138rem;	/* 18.2px */
+
     --radio-checkbox-select-color: var(--charcoal);
     --border-color: var(--charcoal);
 }
@@ -20,12 +26,24 @@
     min-height: 50px;
 }
 
+.ft-label {
+    font-weight: var(--font-weight);
+    font-family: var(--font-family);
+    line-height: 1.625rem;	/* 26px */
+    letter-spacing: var(--letter-spacing);
+    font-size: 1.25rem;	/* 20px */
+}
+
 .ft-input,
 .ft-select {
     width: 100%;
     border: 0;
     border-bottom: 1px solid var(--border-color);
-    font-family: inherit;
+    font-weight: var(--font-weight);
+    font-family: var(--font-family);
+    line-height: 1.625rem;	/* 26px */
+    letter-spacing: var(--letter-spacing);
+    font-size: 1.25rem;	/* 20px */
 }
 
 .ft-input:hover,
@@ -46,12 +64,21 @@
 
 .ft-input::placeholder,
 .ft-select::placeholder {
-    font-family: inherit;
     color: var(--mid-grey);
+	font-weight: var(--font-weight);
+  font-family: var(--font-family);
+  line-height: 1.625rem;	/* 26px */
+  letter-spacing: var(--letter-spacing);
+  font-size: 1.25rem;	/* 20px */
 }
 
 .ft-radio-buttons-group {
     margin-bottom: 1rem;
+    font-weight: var(--font-weight);
+    font-family: var(--font-family);
+    line-height: 1.625rem;	/* 26px */
+    letter-spacing: var(--letter-spacing);
+    font-size: 1.25rem;	/* 20px */
 }
 
 .ft-radio-buttons,
