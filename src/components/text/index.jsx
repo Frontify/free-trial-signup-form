@@ -28,7 +28,7 @@ const InputText = props => {
     : `placeholder-charcoal text-charcoal`
 
   return (
-    <div>
+    <div class="ft-form-field">
       {label && (
         <label 
           className="ft-label" 

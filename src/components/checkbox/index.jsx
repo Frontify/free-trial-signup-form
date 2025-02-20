@@ -47,7 +47,7 @@ const InputCheckbox = props => {
     : { ...validation }
 
   return (
-    <div class="checkbox">
+    <div class="ft-checkbox-group">
       <input
         className="ft-checkbox"
         id={`checkbox-${htmlId}`}

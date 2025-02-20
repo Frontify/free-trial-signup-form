@@ -241,27 +241,29 @@ const Signup = () => {
                   />
                 </div>
               </div>
-              <div>Are you with an Agency? (branding, design, advertising, consulting, tech)*</div>
-              <div className="ft-radio-buttons">
-                <InputRadio
-                    className="mb-5"
+              <div class="ft-radio-buttons-group">
+                <div>Are you with an Agency? (branding, design, advertising, consulting, tech)*</div>
+                <div className="ft-radio-buttons">
+                  <InputRadio
+                      className="mb-5"
+                      name="agency_identification"
+                      label="Yes"
+                      value="Yes"
+                      validation={{ required: true }}
+                      {...{ form }}
+                      checked={selectedRadioOption === `Yes`}
+                      onChange={() => handleOptionChange(`Yes`)}
+                    />
+                  <InputRadio
                     name="agency_identification"
-                    label="Yes"
-                    value="Yes"
+                    label="No"
+                    value="No"
                     validation={{ required: true }}
                     {...{ form }}
-                    checked={selectedRadioOption === `Yes`}
-                    onChange={() => handleOptionChange(`Yes`)}
+                    checked={selectedRadioOption === `No`}
+                    onChange={() => handleOptionChange(`No`)}
                   />
-                <InputRadio
-                  name="agency_identification"
-                  label="No"
-                  value="No"
-                  validation={{ required: true }}
-                  {...{ form }}
-                  checked={selectedRadioOption === `No`}
-                  onChange={() => handleOptionChange(`No`)}
-                />
+                </div>
               </div>
               <div>
                 {selectedRadioOption === `Yes` && (
