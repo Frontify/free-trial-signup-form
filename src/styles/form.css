@@ -26,6 +26,12 @@
     min-height: 50px;
 }
 
+.ft-form-field-select {
+    position: relative;
+    top: 3px;
+    margin-bottom: 3px;
+}
+
 .ft-label {
     font-weight: var(--font-weight);
     font-family: var(--font-family);

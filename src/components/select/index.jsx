@@ -33,7 +33,7 @@ const InputSelect = props => {
   }, [])
 
   return (
-    <div class="ft-form-field">
+    <div class="ft-form-field ft-form-field-select">
       <label 
         className="ft-label" 
         htmlFor={`htmlId`}
