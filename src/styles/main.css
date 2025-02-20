@@ -7,12 +7,22 @@ label {
     width: 100%;
 }
 
-input:not([type="radio"]),
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
 select {
     width: 100%;
 }
 
+input[type="radio"],
+input[type="checkbox"] {
+    /* Overwrite form.css styling */
+    accent-color: #000 !important;
+}
+
 input[type="radio"] + label {
+    /* Overwrite form.css styling */
     padding-left: 0 !important;
 }
 
@@ -24,7 +34,8 @@ input[type="radio"] + label {
 }
 
 .radio-buttons-group,
-.radio-buttons {
+.radio-buttons,
+.checkbox {
     display: flex;
     align-items: center;
 }

@@ -1,11 +1,13 @@
 import "./styles/main.css"
 
-import Signup from "./components/signup"
+//import Signup from "./components/signup"
+import TestComponent from "./components/test"
 
 const App = () => {
   return (
     <>
-      <Signup />
+      {/*<Signup />*/}
+      <TestComponent />
     </>
   )
 }

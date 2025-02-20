@@ -288,6 +288,16 @@ const Signup = () => {
                   onChange={() => handleOptionChange(`No`)}
                 />
               </div>
+              <div>
+                <InputCheckbox
+                  checkRequired
+                  name="terms"
+                  value="terms"
+                  label="I have read and agree to Frontify's Terms of Service, General Terms and Conditions and Privacy Policy."
+                  validation={{ required: true }}
+                  {...{ form }}
+                />
+              </div>
             </>
           )}
         </div>
@@ -360,20 +370,20 @@ const Signup = () => {
               )}
             <div className="relative pb-3 my-5">
               <div className="absolute">
-                <InputCheckbox
+                {/*<InputCheckbox
                   checkRequired
                   name="terms"
                   value="terms"
                   validation={{ required: true }}
                   {...{ form }}
-                />
+                />*/}
               </div>
               <div
                 className="ml-5"
                 /*dangerouslySetInnerHTML={{
                   __html: transl?.terms?.markdown?.childMarkdownRemark?.html,
                 }}*/
-              >I have read and agree to Frontify's Terms of Service, General Terms and Conditions and Privacy Policy.</div>
+              >{/*I have read and agree to Frontify's Terms of Service, General Terms and Conditions and Privacy Policy.*/}</div>
 
               {errors?.terms && (
                 <p className="mt-1 text-xs text-brightred">

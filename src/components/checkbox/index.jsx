@@ -47,13 +47,14 @@ const InputCheckbox = props => {
     : { ...validation }
 
   return (
-    <motion.div
+    /*<motion.div
       className="block"
       transition={transition}
       animate={{
         height: !isChecked && readOnly ? 0 : `auto`,
       }}
-    >
+    >*/
+    <div class="checkbox">
       <input
         id={`checkbox-${htmlId}`}
         type="checkbox"
@@ -67,12 +68,12 @@ const InputCheckbox = props => {
         {...register(name, validationObj)}
       />
       <label
-        style={{
+        /*style={{
           backgroundColor: `transparent`,
           pointerEvents: readOnly ? `none` : `auto`,
           transition: `padding-left 200ms ease`,
           paddingLeft: readOnly ? 0 : `3.5rem`,
-        }}
+        }}*/
         className={classnames(
           `font-bold relative text-md w-full`,
           readOnlyInputClass
@@ -81,7 +82,7 @@ const InputCheckbox = props => {
       >
         {label}
       </label>
-    </motion.div>
+    </div>
   )
 }
 
