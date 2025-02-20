@@ -170,8 +170,8 @@ const Signup = () => {
   }
 
   return (
-    <div className="mt-12">
-      <form onSubmit={form.handleSubmit(submit)}>
+    <div>
+      <form id="ga-free_trial" onSubmit={form.handleSubmit(submit)}>
         <div>
           {plan && (
             <>
@@ -241,7 +241,7 @@ const Signup = () => {
                   />
                 </div>
               </div>
-              <div className="mt-5 mb-2">Are you with an Agency? (branding, design, advertising, consulting, tech)*</div>
+              <div>Are you with an Agency? (branding, design, advertising, consulting, tech)*</div>
               <div className="radio-buttons">
                 <InputRadio
                     className="mb-5"
@@ -263,7 +263,7 @@ const Signup = () => {
                   onChange={() => handleOptionChange(`No`)}
                 />
               </div>
-              <div className="grid gap-2 sm:grid-cols-2 sm:gap-4">
+              <div>
                 {selectedRadioOption === `Yes` && (
                   <InputSelect
                     name="agency_size"
@@ -292,7 +292,7 @@ const Signup = () => {
                 )}
               </div>
               {errors?.agency_identification && (
-                <p className="mt-1 text-xs text-brightred">
+                <p>
                   {/*{transl.agencyErrorMessage?.value}*/}
                 </p>
               )}
@@ -306,17 +306,13 @@ const Signup = () => {
                   {...{ form }}
                 />
                 {errors?.terms && (
-                  <p className="mt-1 text-xs text-brightred">
+                  <p>
                     {/*{transl.termsErrorMessage?.value}*/}
                   </p>
                 )}
               </div>
               <Button
                 type="submit"
-                className={classNames(
-                  `block md:inline-block text-center bg-charcoal hover:bg-superdark shadow-button rounded-lg text-white text-xs lg:text-sm px-5 py-2 transition duration-500`,
-                  sending && `sending`
-                )}
                 disabled={sending}
               >
                 {sending ? (

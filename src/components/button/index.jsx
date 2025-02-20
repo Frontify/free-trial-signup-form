@@ -6,7 +6,7 @@ import React from "react"
 
 const Button = ({
   type = `button`,
-  theme = `primary`,
+  theme,
   useDefaultStyling = false,
   isInverted = false,
   isRounded = false,

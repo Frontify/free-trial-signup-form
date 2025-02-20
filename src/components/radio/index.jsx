@@ -2,7 +2,7 @@
 import "../../styles/form.css"
 
 import classnames from "classnames"
-import { motion } from "framer-motion"
+//import { motion } from "framer-motion"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
 import { useId } from "react-id-generator"
@@ -32,18 +32,10 @@ const InputRadio = props => {
   }
 
   return (
-    //<motion.div
-      //className={classnames(`block`, className)}
-      //transition={transition}
-      //animate={{
-        //height: !isChecked && readOnly ? 0 : `auto`,
-      //}}
-    //>
     <div class="radio-buttons-group">
       <input
         id={htmlId}
         type="radio"
-        className="transition duration-200 ease-in-out bg-transparent"
         value={value || label}
         readOnly={readOnly}
         {...register(name, validation)}
@@ -54,10 +46,6 @@ const InputRadio = props => {
         tabIndex={tabIndex}
       />
       <label
-        className={classnames(
-          `font-bold relative text-md w-full text-charcoal`,
-          readOnlyInputClass
-        )}
         htmlFor={htmlId}
       >
         {label}
