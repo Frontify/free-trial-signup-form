@@ -1,6 +1,5 @@
 import axios from "axios"
 import jsonpAdapter from "axios-jsonp"
-import classNames from "classnames"
 import Cookies from "js-cookie"
 import jstz from "jstz"
 import React, { useState } from "react"
@@ -101,7 +100,7 @@ const Signup = () => {
     }
 
     // API call to product
-    fetch(`${process.env.GATSBY_APP_URL}/api/user/signup`, {
+    fetch(`https://app.frontify.com/api/user/signup`, {
       method: `POST`,
       mode: `cors`,
       headers: { "Content-Type": `application/json` },
