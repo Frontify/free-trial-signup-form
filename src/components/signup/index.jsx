@@ -38,12 +38,10 @@ const Signup = () => {
   const getPhonePlaceholder = () => {
     const country = form.watch(`country`)
 
-    /*
-    if (!country) return `${transl.phonePlaceholder?.value} +41...`
-    return `${transl.phonePlaceholder?.value} +${
-      countries.find(e => e[0] === country)[1]
-    }…`
-    */
+    if (!country) return `+41...`;
+
+    const countryData = countries.find(e => e[0] === country);
+    return countryData ? `+${countryData[1]}…` : `+41...`;
   }
 
   // Submit function
