@@ -276,7 +276,7 @@ const Signup = () => {
               </div>
               {errors?.agency_identification && (
                 <p>
-                  {/*{transl.agencyErrorMessage?.value}*/}
+                  Selection required
                 </p>
               )}
               <div>
@@ -290,7 +290,7 @@ const Signup = () => {
                 />
                 {errors?.terms && (
                   <p>
-                    {/*{transl.termsErrorMessage?.value}*/}
+                    Checkbox is required
                   </p>
                 )}
               </div>
@@ -300,15 +300,14 @@ const Signup = () => {
               >
                 {sending ? (
                   <>
-                    {/*{transl.SubmitButtonTextSubmitting?.value}*/}
+                    Signing up
                     <span>.</span>
                     <span>.</span>
                     <span>.</span>
                   </>
                 ) : (
                   <>
-                      {/*<>{transl.SubmitButtonText?.value}</>*/}
-                      Sign Up
+                    Sign Up
                   </>
                 )}
               </Button>
