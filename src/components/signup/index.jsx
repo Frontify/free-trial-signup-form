@@ -106,40 +106,30 @@ const Signup = () => {
     })
       .then(res => res.json())
       .then(data => {
-        const { success, domain, token, errors } = data
+        const { errors } = data
+        if (errors) {
+          if (errors[`email-already-in-use`]) {
+            setEmailError(`emailInUse`, `Email address already in use`)
+            setSending(false)
+          } else if (errors[`email-invalid`]) {
+            setEmailError(
+              `emailInvalid`,
+              `Please enter a valid email address`
+            )
 
-        if (success && domain && token) {
-          const url = `https://${domain}/api/account/login/?token=${token}`
-
-          return axios({
-            method: `POST`,
-            url: url,
-            adapter: jsonpAdapter,
-          })
-        } else {
-          if (errors) {
-            if (errors[`email-already-in-use`]) {
-              setEmailError(`emailInUse`, `Email address already in use`)
-              setSending(false)
-            } else if (errors[`email-invalid`]) {
-              setEmailError(
-                `emailInvalid`,
-                `Please enter a valid email address`
-              )
-
-              setSending(false)
-            }
-            return {
-              data: {
-                success: false,
-              },
-            }
+            setSending(false)
+          }
+          return {
+            data: {
+              success: false,
+            },
           }
         }
+        return data;
       })
       .then(res => {
-        const { success, url } = res.data
-        if (success && url) {
+        const { success } = res.data
+        if (success) {
           if (window.dataLayer) {
             window.dataLayer.push({ event: `custom.tracking.signup` })
           }
