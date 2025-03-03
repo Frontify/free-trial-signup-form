@@ -210,7 +210,7 @@ const Signup = () => {
                   />
                 </div>
               </div>
-              <div class="ft-radio-buttons-group">
+              <div className="ft-radio-buttons-group">
                 <div>Are you with an Agency? (branding, design, advertising, consulting, tech)*</div>
                 <div className="ft-radio-buttons">
                   <InputRadio
