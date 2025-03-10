@@ -134,7 +134,7 @@ const Signup = () => {
             window.dataLayer.push({ event: `custom.tracking.signup` })
           }
           // Redirect to the specified URL after successful form submission
-          window.location.href = `https://frontify-website.webflow.io/en/thank-you`
+          window.location.href = `https://www.frontify.com/en/thank-you`
         }
       })
   }
