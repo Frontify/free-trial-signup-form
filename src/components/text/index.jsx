@@ -20,15 +20,11 @@ const InputText = props => {
     formState: { errors },
     clearErrors,
   } = form
-
-  const inputValue = watch(name)
+  console.log(errors);
   const [htmlId] = useId()
-  const textColor = errors[name]
-    ? `placeholder-brightred text-brightred`
-    : `placeholder-charcoal text-charcoal`
 
   return (
-    <div class="ft-form-field">
+    <div className="ft-form-field">
       {label && (
         <label 
           className="ft-label" 
@@ -50,6 +46,7 @@ const InputText = props => {
         {...register(name, validation)}
         tabIndex={readOnly ? -1 : 0}
       />
+          {errors?.[name] && (<div className="ft-error">{errors[name]?.message || "This field is required"}</div>)}
     </div>
   )
 }

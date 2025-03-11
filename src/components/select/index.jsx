@@ -33,7 +33,7 @@ const InputSelect = props => {
   }, [])
 
   return (
-    <div class="ft-form-field ft-form-field-select">
+    <div className="ft-form-field ft-form-field-select">
       <label 
         className="ft-label" 
         htmlFor={`htmlId`}
@@ -71,6 +71,7 @@ const InputSelect = props => {
           })}
         </select>
       </div>
+      {errors?.[name] && (<div className="ft-error">{errors[name]?.message || "This field is required"}</div>)}
     </div>
   )
 }

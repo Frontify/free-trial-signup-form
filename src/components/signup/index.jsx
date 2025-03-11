@@ -106,8 +106,8 @@ const Signup = () => {
     })
       .then(res => res.json())
       .then(data => {
-        const { errors } = data
-        if (errors) {
+        const { errors, success } = data
+        if (!success && errors) {
           if (errors[`email-already-in-use`]) {
             setEmailError(`emailInUse`, `Email address already in use`)
             setSending(false)
@@ -125,7 +125,7 @@ const Signup = () => {
             },
           }
         }
-        return data;
+        return {data};
       })
       .then(res => {
         const { success } = res.data
@@ -263,10 +263,11 @@ const Signup = () => {
                 )}
               </div>
               {errors?.agency_identification && (
-                <p>
+                <div className="ft-error">
                   Selection required
-                </p>
+                </div>
               )}
+              <div>
               <div style={{ display: "flex", alignItems: "center" }}>
                 <InputCheckbox
                   checkRequired
@@ -282,12 +283,12 @@ const Signup = () => {
                     }}
                   />
                 </label>
-                {errors?.terms && (
-                  <p>
-                    Checkbox is required
-                  </p>
+              </div>
+              {errors?.terms && (
+                  <div className="ft-error">Checkbox is required</div>
                 )}
               </div>
+              
               <Button
                 type="submit"
                 disabled={sending}

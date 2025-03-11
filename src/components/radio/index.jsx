@@ -32,7 +32,7 @@ const InputRadio = props => {
   }
 
   return (
-    <div class="radio-buttons-group">
+    <div className="radio-buttons-group">
       <input
         className="ft-radio"
         id={htmlId}
