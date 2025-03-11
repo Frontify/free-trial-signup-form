@@ -267,15 +267,21 @@ const Signup = () => {
                   Selection required
                 </p>
               )}
-              <div>
+              <div style={{ display: "flex", alignItems: "center" }}>
                 <InputCheckbox
                   checkRequired
                   name="terms"
                   value="terms"
-                  label="I have read and agree to Frontify's Terms of Service, General Terms and Conditions and Privacy Policy."
                   validation={{ required: true }}
                   {...{ form }}
                 />
+                <label htmlFor="terms" style={{ cursor: "pointer", position: "relative", right: "10px" }}>
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: `I have read and agree to Frontify's <a href="/en/legal/website-terms-of-service" target="_blank" rel="noopener noreferrer" class="link-slide-underline">Terms of Service</a>, <a href="/en/legal/gtc" target="_blank" rel="noopener noreferrer" class="link-slide-underline">General Terms and Conditions</a>, and <a href="/en/legal/privacy-notice" target="_blank" rel="noopener noreferrer" class="link-slide-underline">Privacy Policy</a>.`,
+                    }}
+                  />
+                </label>
                 {errors?.terms && (
                   <p>
                     Checkbox is required
