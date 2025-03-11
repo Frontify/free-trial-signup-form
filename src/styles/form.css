@@ -137,3 +137,6 @@
     border: 1px solid var(--light-grey);
     outline: none;
 }
+.ft-error {
+    color: red;
+}
