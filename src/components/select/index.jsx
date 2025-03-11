@@ -71,7 +71,7 @@ const InputSelect = props => {
           })}
         </select>
       </div>
-      {errors?.[name] && (<div className="ft-error">{errors[name]?.message}</div>)}
+      {errors?.[name] && (<div className="ft-error">{errors[name]?.message || "This field is required"}</div>)}
     </div>
   )
 }
