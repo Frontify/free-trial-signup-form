@@ -263,7 +263,7 @@ const Signup = () => {
                 )}
               </div>
               {errors?.agency_identification && (
-                <p className="ft-error">
+                <p className="ft-error ft-error-input">
                   Selection required
                 </p>
               )}
@@ -285,7 +285,7 @@ const Signup = () => {
                 </label>
               </div>
               {errors?.terms && (
-                  <p className="ft-error">Checkbox is required</p>
+                  <p className="ft-error ft-error-input">Checkbox is required</p>
                 )}
               </div>
               
